@@ -1,4 +1,4 @@
-package Day4.datastructures;
+package ds;
 
 public class Stack {
 	
