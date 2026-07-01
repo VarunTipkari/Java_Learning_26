@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 import com.book.Book;
 import com.dao.BookDaoCollectionsImpl;
 import com.service.*;
@@ -38,11 +40,8 @@ public class Test {
 		
 		
 		//--------------------------------------------------------------
-		try {
-			service.delete(15);
-		} catch (BookNotFoundException e) {
-			e.printStackTrace();
-		}
+		
+		service.listOrderByTitle().forEach(System.out::println);
 		
 	}
 

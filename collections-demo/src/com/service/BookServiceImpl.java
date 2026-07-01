@@ -1,6 +1,8 @@
 package com.service;
 
+import java.util.Comparator;
 import java.util.List;
+
 import com.book.Book;
 import com.dao.BookDao;
 
@@ -41,6 +43,18 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<Book> findByPrice(double min, double max) {
 		return dao.findByPrice(min, max);
+	}
+	
+	@Override
+	public List<Book> listOrderByTitle() {
+		
+		Comparator<Book> compTitle = (b1,b2) -> b1.getTitle().compareTo(b2.getTitle());
+		
+		List<Book> list = dao.list();
+		list.sort(compTitle);
+		
+		return list;
+		
 	}
 
 }
